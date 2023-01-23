@@ -3,7 +3,7 @@ package ui;
 public class Food {
     String name;
 
-    // CONSTRUCTOR LOL
+    // CONSTRUCTOR
 
     public Food(String name) {
         // SETS FIELDS

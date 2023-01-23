@@ -36,6 +36,7 @@ public class SelectionSystem {
             for (Food item : foodList) {
                 System.out.println("[" + index++ + "] - " + item.name);
             }
+            System.out.println("--------------------------------------------------");
         }
     }
 

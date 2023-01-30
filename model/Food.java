@@ -1,5 +1,6 @@
-package ui;
+package model;
 
+// represents a food item
 public class Food {
     String name;
 

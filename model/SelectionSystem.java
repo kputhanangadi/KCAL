@@ -1,5 +1,6 @@
-package ui;
+package model;
 
+import model.Food;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -10,13 +11,16 @@ public class SelectionSystem {
         foodList = new ArrayList<>();
     }
 
-    //  Adds entered food item into a list that can be accessed
+    // MODIFIES: this
+    // EFFECTS: adds a new tem into the food list
     public void addNewFood(String foodName) {
         foodList.add(new Food(foodName));
         System.out.println("Successfully added item into Foods Consumed Today!");
     }
 
-    // Takes in the index and removes the item in that index
+    // REQUIRES: given int must be a valid index
+    // MODIFIES: this
+    // EFFECTS:  removes an item from the food list
     public void deleteFoodIndex(int index) {
         if (index >= 0 && index < foodList.size()) {
             foodList.remove(index);
@@ -26,7 +30,7 @@ public class SelectionSystem {
         }
     }
 
-    // Displays all the items in the calorie counter
+    // EFFECTS: displays all food items stored in the food list
     public void showFoodItems() {
         if (foodList.size() == 0) {
             System.out.println("Eat some food to log!");
@@ -40,7 +44,7 @@ public class SelectionSystem {
         }
     }
 
-    // Returns the total food count
+    // EFFECTS: returns the number of food items in the food list
     public int foodCount() {
         return foodList.size();
     }

@@ -4,9 +4,11 @@ import model.Food;
 import java.util.ArrayList;
 import java.util.List;
 
+// Represents users daily food intake
 public class SelectionSystem {
     List<Food> foodList;
 
+    // EFFECTS: constructs a new selection system object
     public SelectionSystem() {
         foodList = new ArrayList<>();
     }

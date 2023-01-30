@@ -4,11 +4,8 @@ package model;
 public class Food {
     String name;
 
-    // CONSTRUCTOR
-
+    // EFFECTS: constructs a new food item
     public Food(String name) {
-        // SETS FIELDS
         this.name = name;
     }
-
 }

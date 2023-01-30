@@ -2,6 +2,8 @@ package ui;
 
 
 import java.util.Scanner;
+import model.Food;
+import model.SelectionSystem;
 
 public class Main {
 

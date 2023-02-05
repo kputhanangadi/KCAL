@@ -20,5 +20,4 @@ public class FoodTest {
     public void testConstructor() {
         assertEquals("testing", food.getName());
     }
-
 }

@@ -7,7 +7,8 @@ import model.InterfaceSelectionSystem;
 import model.SelectionSystem;
 
 public class Main {
-    // User input
+
+    // Calling InterfaceSelectionSystem
     public static void main(String[] args) {
         new InterfaceSelectionSystem();
     }

@@ -1,5 +1,4 @@
 package test;
-
 import model.Food;
 
 import model.SelectionSystem;
@@ -10,16 +9,16 @@ import static org.junit.jupiter.api.Assertions.*;
 
 public class FoodTest {
 
-    private SelectionSystem selectionSystem;
+    private Food food;
 
     @BeforeEach
     public void runBefore() {
-        selectionSystem = new SelectionSystem();
+        food = new Food("testing");
     }
 
-    @Test //TODO
+    @Test
     public void testConstructor() {
-
+        assertEquals("testing", food.getName());
     }
 
 }

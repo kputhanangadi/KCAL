@@ -1,11 +1,12 @@
 package test;
-
 import model.SelectionSystem;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class SelectionSystemTest {
 
@@ -18,12 +19,13 @@ public class SelectionSystemTest {
 
     @Test //TODO
     public void testConstructor() {
-
+        assertEquals(0, selectionSystem.foodCount());
     }
 
     @Test //TODO
     public void addNewFoodTest() {
-
+        selectionSystem.addNewFood("Chips");
+        assertEquals(1, selectionSystem.foodCount());
     }
 
     @Test
@@ -36,27 +38,33 @@ public class SelectionSystemTest {
 
     @Test //TODO
     public void deleteFoodIndexEmptyTest() {
-
+        selectionSystem.deleteFoodIndex(0);
+        assertEquals(0, selectionSystem.foodCount());
     }
 
     @Test //TODO
     public void showFoodItemsNotEmptyTest() {
-
+        selectionSystem.addNewFood("Chips");
+        assertEquals(1, selectionSystem.foodCount());
+        selectionSystem.showFoodItems();
+        assertEquals(1, selectionSystem.foodCount());
     }
 
     @Test //TODO
     public void showFoodItemsEmptyTest() {
-
-    }
-
-    @Test
-    public void foodCountEmptyTest() {
-
+        selectionSystem.showFoodItems();
+        assertEquals(0, selectionSystem.foodCount());
     }
 
     @Test
     public void foodCountNotEmptyTest() {
+        selectionSystem.addNewFood("Chips");
+        assertEquals(1, selectionSystem.foodCount());
+    }
 
+    @Test
+    public void foodCountEmptyTest() {
+        assertEquals(0, selectionSystem.foodCount());
     }
 
 }

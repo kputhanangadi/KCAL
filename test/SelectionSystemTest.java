@@ -17,12 +17,12 @@ public class SelectionSystemTest {
         selectionSystem = new SelectionSystem();
     }
 
-    @Test //TODO
+    @Test
     public void testConstructor() {
         assertEquals(0, selectionSystem.foodCount());
     }
 
-    @Test //TODO
+    @Test
     public void addNewFoodTest() {
         selectionSystem.addNewFood("Chips");
         assertEquals(1, selectionSystem.foodCount());
@@ -36,13 +36,13 @@ public class SelectionSystemTest {
         assertEquals(0, selectionSystem.foodCount());
     }
 
-    @Test //TODO
+    @Test
     public void deleteFoodIndexEmptyTest() {
         selectionSystem.deleteFoodIndex(0);
         assertEquals(0, selectionSystem.foodCount());
     }
 
-    @Test //TODO
+    @Test
     public void showFoodItemsNotEmptyTest() {
         selectionSystem.addNewFood("Chips");
         assertEquals(1, selectionSystem.foodCount());
@@ -50,7 +50,7 @@ public class SelectionSystemTest {
         assertEquals(1, selectionSystem.foodCount());
     }
 
-    @Test //TODO
+    @Test
     public void showFoodItemsEmptyTest() {
         selectionSystem.showFoodItems();
         assertEquals(0, selectionSystem.foodCount());

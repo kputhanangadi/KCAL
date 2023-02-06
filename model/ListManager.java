@@ -4,11 +4,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 // Represents users daily food intake
-public class ListManger {
+public class ListManager implements Loadable, Saveable{
     List<Food> foodList;
 
     // EFFECTS: constructs a new selection system object
-    public ListManger() {
+    public ListManager() {
         foodList = new ArrayList<>();
     }
 

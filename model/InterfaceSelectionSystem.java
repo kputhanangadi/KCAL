@@ -11,7 +11,7 @@ public class InterfaceSelectionSystem {
     // Running Selection System
     public void runSelectionSystem() {
         Scanner scanner = new Scanner(System.in);
-        ListManger listManger = new ListManger();
+        ListManager listManager = new ListManager();
         int choice = 0;
 
         // REQUIRES: given int/string must be a valid index
@@ -29,22 +29,22 @@ public class InterfaceSelectionSystem {
                 case 1:
                     System.out.print("Enter a food item that you have consumed: ");
                     String foodItem = scanner.nextLine();
-                    listManger.addNewFood(foodItem);
+                    listManager.addNewFood(foodItem);
                     break;
                 case 2:
-                    if (listManger.foodCount() > 0) {
-                        listManger.showFoodItems();
+                    if (listManager.foodCount() > 0) {
+                        listManager.showFoodItems();
 
                         System.out.print("Which food item would you like to delete:  ");
                         int index = scanner.nextInt();
                         scanner.nextLine();
-                        listManger.deleteFoodIndex(index - 1);
+                        listManager.deleteFoodIndex(index - 1);
                     } else {
                         System.out.println("No food items are available.");
                     }
                     break;
                 case 3:
-                    listManger.showFoodItems();
+                    listManager.showFoodItems();
                     break;
                 case 4:
                     break;

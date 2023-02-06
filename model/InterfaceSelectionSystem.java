@@ -1,7 +1,5 @@
 package model;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Scanner;
 
 public class InterfaceSelectionSystem {
@@ -13,10 +11,12 @@ public class InterfaceSelectionSystem {
     // Running Selection System
     public void runSelectionSystem() {
         Scanner scanner = new Scanner(System.in);
-        SelectionSystem selectionSystem = new SelectionSystem();
+        ListManger listManger = new ListManger();
         int choice = 0;
 
-        // CODE USED FROM CONTENT
+        // REQUIRES: given int/string must be a valid index
+        // MODIFIES: this
+        // EFFECTS:  respective code is executed from the 4 options
         while (true) {
             System.out.println("[1] Add an item to the Food Consumed List.");
             System.out.println("[2] Remove an item from the Food Consumed List.");
@@ -29,22 +29,22 @@ public class InterfaceSelectionSystem {
                 case 1:
                     System.out.print("Enter a food item that you have consumed: ");
                     String foodItem = scanner.nextLine();
-                    selectionSystem.addNewFood(foodItem);
+                    listManger.addNewFood(foodItem);
                     break;
                 case 2:
-                    if (selectionSystem.foodCount() > 0) {
-                        selectionSystem.showFoodItems();
+                    if (listManger.foodCount() > 0) {
+                        listManger.showFoodItems();
 
                         System.out.print("Which food item would you like to delete:  ");
                         int index = scanner.nextInt();
                         scanner.nextLine();
-                        selectionSystem.deleteFoodIndex(index - 1);
+                        listManger.deleteFoodIndex(index - 1);
                     } else {
                         System.out.println("No food items are available.");
                     }
                     break;
                 case 3:
-                    selectionSystem.showFoodItems();
+                    listManger.showFoodItems();
                     break;
                 case 4:
                     break;

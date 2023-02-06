@@ -1,10 +1,6 @@
 package ui;
 
-
-import java.util.Scanner;
-import model.Food;
 import model.InterfaceSelectionSystem;
-import model.SelectionSystem;
 
 public class Main {
 
@@ -14,7 +10,7 @@ public class Main {
     }
 }
 
-//    //LAB ONE
+//    // LAB ONE
 //    public static void main(String[] args) {
 //        methodname1();
 //        methodname2();

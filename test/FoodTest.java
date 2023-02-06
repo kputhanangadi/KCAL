@@ -1,7 +1,6 @@
 package test;
 import model.Food;
 
-import model.SelectionSystem;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 

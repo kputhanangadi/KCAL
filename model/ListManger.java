@@ -1,15 +1,14 @@
 package model;
 
-import model.Food;
 import java.util.ArrayList;
 import java.util.List;
 
 // Represents users daily food intake
-public class SelectionSystem {
+public class ListManger {
     List<Food> foodList;
 
     // EFFECTS: constructs a new selection system object
-    public SelectionSystem() {
+    public ListManger() {
         foodList = new ArrayList<>();
     }
 

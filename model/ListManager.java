@@ -47,6 +47,7 @@ public class ListManager implements Loadable, Saveable{
 
     // EFFECTS: returns the number of food items in the food list
     public int foodCount() {
+
         return foodList.size();
     }
 
@@ -57,4 +58,20 @@ public class ListManager implements Loadable, Saveable{
     public void save() {
 
     }
+
+    public String getFoodItemsOutput() {
+        StringBuilder sb = new StringBuilder();
+        if (foodList.size() == 0) {
+            sb.append("Eat some food to log!\n");
+        } else {
+            sb.append("Food Consumed: \n");
+            int index = 1;
+            for (Food item : foodList) {
+                sb.append("[" + index++ + "] - " + item.getName() + "\n");
+            }
+            sb.append("--------------------------------------------------\n");
+        }
+        return sb.toString();
+    }
+
 }

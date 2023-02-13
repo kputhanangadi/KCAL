@@ -2,11 +2,8 @@ package model;
 
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.nio.file.Files;
-import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
 import java.util.Scanner;
 
 public class InterfaceSelectionSystem {
@@ -22,17 +19,6 @@ public class InterfaceSelectionSystem {
 
     // Running Selection System
     public void runSelectionSystem() throws IOException {
-        List<String> lines = Files.readAllLines(Paths.get("inputfile.txt"));;
-        PrintWriter writer = new PrintWriter("outputfile.txt","UTF-8");
-        lines.add("Trey Coordinator");
-        for (String line : lines){
-            ArrayList<String> partsOfLine = splitOnSpace(line);
-            System.out.print("Name: "+partsOfLine.get(0)+" ");
-            System.out.println("Role: "+partsOfLine.get(1));
-            writer.println(line);
-        }
-        writer.close(); //note -- if you miss this, the file will not be written at all.
-
         Scanner scanner = new Scanner(System.in);
         ListManager listManager = new ListManager();
         int choice = 0;
@@ -70,6 +56,14 @@ public class InterfaceSelectionSystem {
                     listManager.showFoodItems();
                     break;
                 case 4:
+                    PrintWriter writer = new PrintWriter("outputfile.txt","UTF-8");
+                    listManager.getFoodItemsOutput();
+                    System.out.print("LOADED DATA:\n" + listManager.getFoodItemsOutput() + "----------\n");
+//                    for (String line : line){
+//                        System.out.print("LOADED DATA:\n" + "New Food\n" + "---------------------------\n");
+//                        writer.println(line);
+//                    }
+                    writer.close(); //note -- if you miss this, the file will not be written at all.
                     break;
                 default:
                     System.out.println("Invalid selection.");
@@ -78,5 +72,6 @@ public class InterfaceSelectionSystem {
         }
         System.out.println("Keep up the good work!");
     }
+
     // LINK TO EVERYTHING IN MAIN
 }

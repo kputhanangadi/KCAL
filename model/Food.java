@@ -13,4 +13,8 @@ public class Food {
     public String getName() {
         return this.name;               // GETTER
     }
+
+    public String twoString(){
+        return name;
+    }
 }

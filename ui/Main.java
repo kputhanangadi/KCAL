@@ -2,10 +2,12 @@ package ui;
 
 import model.InterfaceSelectionSystem;
 
+import java.io.IOException;
+
 public class Main {
 
     // Calling InterfaceSelectionSystem
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         new InterfaceSelectionSystem();
     }
 }

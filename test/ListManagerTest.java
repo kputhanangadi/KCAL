@@ -65,4 +65,13 @@ public class ListManagerTest {
         assertEquals(0, listManager.foodCount());
     }
 
+    @Test
+    public void saveTest() {
+
+    }
+
+    @Test
+    public void loadTest() {
+
+    }
 }

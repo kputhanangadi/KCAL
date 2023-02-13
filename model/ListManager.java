@@ -49,4 +49,12 @@ public class ListManager implements Loadable, Saveable{
     public int foodCount() {
         return foodList.size();
     }
+
+    public void load(){
+
+    }
+
+    public void save() {
+
+    }
 }

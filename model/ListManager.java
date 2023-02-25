@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 // Represents users daily food intake
-public class ListManager implements Loadable, Saveable{
+public class ListManager implements Loadable, Saveable {
     List<RegularFood> regularFoodList;
 
     // EFFECTS: constructs a new selection system object
@@ -41,7 +41,7 @@ public class ListManager implements Loadable, Saveable{
             for (RegularFood item : regularFoodList) {
                 System.out.println("[" + index++ + "] - " + item.getName());
             }
-            System.out.println("--------------------------------------------------");
+            System.out.println("\n");
         }
     }
 
@@ -72,6 +72,14 @@ public class ListManager implements Loadable, Saveable{
             sb.append("--------------------------------------------------\n");
         }
         return sb.toString();
+    }
+
+    public int getTotalCaloriesConsumed() {
+        int totalCalories = 0;
+        for (FoodItem food : regularFoodList) {
+            totalCalories += food.getCalorieCount();
+        }
+        return totalCalories;
     }
 
 }

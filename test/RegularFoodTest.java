@@ -1,22 +1,22 @@
 package test;
-import model.Food;
+import model.RegularFood;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-public class FoodTest {
+public class RegularFoodTest {
 
-    private Food food;
+    private RegularFood regularFood;
 
     @BeforeEach
     public void runBefore() {
-        food = new Food("testing");
+        regularFood = new RegularFood("testing");
     }
 
     @Test
     public void testConstructor() {
-        assertEquals("testing", food.getName());
+        assertEquals("testing", regularFood.getName());
     }
 }

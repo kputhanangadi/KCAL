@@ -4,12 +4,12 @@ public class RegularFood extends FoodItem {
     private int calorieCount;
 
     public RegularFood(String name, int calorieCount) {
-        super(name);
+        super(name, 105);
         this.calorieCount = calorieCount;
     }
 
     public RegularFood(String foodName) {
-        super(foodName);
+        super(foodName, 105);
     }
 
     public int getCalorieCount() {

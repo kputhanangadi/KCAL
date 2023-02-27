@@ -3,7 +3,7 @@ package model;
 public abstract class FoodItem {
     private String name;
 
-    public FoodItem(String name) {
+    public FoodItem(String name, int i) {
         this.name = name;
     }
 

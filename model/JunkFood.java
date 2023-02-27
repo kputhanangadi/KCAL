@@ -5,7 +5,7 @@ public class JunkFood extends FoodItem {
     private int calorieCount;
 
     public JunkFood(String name, int type, int calorieCount) {
-        super(name);
+        super(name, 105);
         this.type = String.valueOf(type);
         this.calorieCount = calorieCount;
     }

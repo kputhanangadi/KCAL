@@ -1,4 +1,8 @@
-package model;
+package ui;
+
+import model.JunkFood;
+import model.ListManager;
+import model.RegularFood;
 
 import java.io.IOException;
 import java.io.PrintWriter;

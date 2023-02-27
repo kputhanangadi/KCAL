@@ -34,7 +34,7 @@ public class ListManager implements Loadable, Saveable {
     // EFFECTS: displays all food items stored in the food list
     public void showFoodItems() {
         if (regularFoodList.size() == 0) {
-            System.out.println("Eat some food to log!");
+            System.out.println("Eat some food to log!" + "\n");
         } else {
             System.out.println("Food Consumed: ");
             int index = 1;

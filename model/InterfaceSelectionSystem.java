@@ -67,19 +67,19 @@ public class InterfaceSelectionSystem {
                         scanner.nextLine();
                         listManager.deleteFoodIndex(index - 1);
                     } else {
-                        System.out.println("No food items are available.");
+                        System.out.println("No food items are available." + "\n");
                     }
                     break;
                 case 4:
                     listManager.showFoodItems();
                     break;
                 case 5:
-                    System.out.println("Total calories consumed: " + listManager.getTotalCaloriesConsumed());
+                    System.out.println("Total calories consumed: " + listManager.getTotalCaloriesConsumed() + "\n");
                     break;
                 case 6:
                     PrintWriter writer = new PrintWriter("outputfile.txt", "UTF-8");
                     listManager.getFoodItemsOutput();
-                    System.out.print("LOADED DATA:\n" + listManager.getFoodItemsOutput() + "----------\n");
+                    System.out.print("LOADED DATA:\n" + listManager.getFoodItemsOutput() + "\n");
 //                    for (String line : line){
 //                        System.out.print("LOADED DATA:\n" + "New Food\n" + "---------------------------\n");
 //                        writer.println(line);

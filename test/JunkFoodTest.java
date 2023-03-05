@@ -28,6 +28,15 @@ class JunkFoodTest {
     }
 
     @Test
-    void testToString() {
+    public void testToString() {
+        JunkFood junkFood = new JunkFood("Chips", 500, 20);
+        String expectedString = "JUNK_FOOD --> [" +
+                "name = Chips" +
+                " | calorieCount = 500" +
+                " | sugarCount = 20" +
+                ']';
+
+        String actualString = junkFood.toString();
+        assertEquals(expectedString, actualString);
     }
 }

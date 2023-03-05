@@ -5,6 +5,9 @@ import model.ListManager;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import java.io.ByteArrayOutputStream;
+import java.io.PrintStream;
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class ListManagerTest {
@@ -102,29 +105,44 @@ public class ListManagerTest {
         assertEquals(expectedOutput, actualOutput);
     }
 
+    @Test
+    public void testShowFoodItemsEmpty() {
+        ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
+        System.setOut(new PrintStream(outputStream));
+
+        listManager.showFoodItems();
+        assertEquals("Eat some food to log!\n\n", outputStream.toString());
+    }
+
+//    @Test
+//    public void testShowFoodItemsNonEmpty() {
+//        FoodItem apple = new RegularFood("Apple", 50);
+//        FoodItem pizza = new RegularFood("Pizza", 500);
+//        FoodItem soda = new RegularFood("Soda", 200);
+//
+//        listManager.addNewFood(String.valueOf(apple));
+//        listManager.addNewFood(String.valueOf(pizza));
+//        listManager.addNewFood(String.valueOf(soda));
+//
+//        ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
+//        System.setOut(new PrintStream(outputStream));
+//
+//        listManager.showFoodItems();
+//
+//        assertEquals("Food Consumed: \n[1] - Apple\n[2] - Pizza\n[3] - Soda\n\n", outputStream.toString());
+//    }
+//
 //    @Test
 //    public void testGetTotalCaloriesConsumed() {
-//        int expectedCalories = 0;
+//        FoodItem apple = new RegularFood("Apple", 50);
+//        FoodItem pizza = new RegularFood("Pizza", 500);
+//        FoodItem soda = new RegularFood("Soda", 200);
 //
-//        // Test with an empty foodItemList
-//        int actualCalories = listManager.getTotalCaloriesConsumed();
-//        assertEquals(expectedCalories, actualCalories);
+//        listManager.addNewFood(String.valueOf(apple));
+//        listManager.addNewFood(String.valueOf(pizza));
+//        listManager.addNewFood(String.valueOf(soda));
 //
-//        // Test with a non-empty foodItemList
-//        listManager.addNewFood(String.valueOf(new FoodItem("Banana", 105) {
-//            @Override
-//            public int getCalorieCount() {
-//                return 105;
-//            }
-//        }));
-//        listManager.addNewFood(String.valueOf(new FoodItem("Apple", 95) {
-//            @Override
-//            public int getCalorieCount() {
-//                return 95;
-//            }
-//        }));
-//        expectedCalories = 200;
-//        actualCalories = listManager.getTotalCaloriesConsumed();
-//        assertEquals(expectedCalories, actualCalories);
+//        assertEquals(750, listManager.getTotalCaloriesConsumed());
 //    }
 }
+

@@ -1,7 +1,7 @@
-package test;
+package src.test;
 
-import model.FoodItem;
-import model.JunkFood;
+import src.model.FoodItem;
+import src.model.JunkFood;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;

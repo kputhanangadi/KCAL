@@ -1,6 +1,6 @@
-package model;
+package src.model;
 
-public interface Saveable {
+public interface InterfaceSaveable {
 
     public void save();
         //SAVING THE PROGRAM

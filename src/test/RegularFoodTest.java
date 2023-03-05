@@ -1,6 +1,6 @@
-package test;
+package src.test;
 
-import model.RegularFood;
+import src.model.RegularFood;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 

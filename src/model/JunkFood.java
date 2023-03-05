@@ -1,4 +1,4 @@
-package model;
+package src.model;
 
 public class JunkFood extends FoodItem {
     private String type;

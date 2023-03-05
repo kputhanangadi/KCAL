@@ -1,7 +1,7 @@
-package test;
+package src.test;
 
-import model.FoodItem;
-import model.ListManager;
+import src.model.FoodItem;
+import src.model.ListManager;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 

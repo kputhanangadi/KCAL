@@ -1,8 +1,8 @@
-package ui;
+package src.ui;
 
-import model.JunkFood;
-import model.ListManager;
-import model.RegularFood;
+import src.model.RegularFood;
+import src.model.JunkFood;
+import src.model.ListManager;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -81,7 +81,7 @@ public class InterfaceSelectionSystem {
                     System.out.println("Total calories consumed: " + listManager.getTotalCaloriesConsumed() + "\n");
                     break;
                 case 6:
-                    PrintWriter writer = new PrintWriter("outputfile.txt", "UTF-8");
+                    PrintWriter writer = new PrintWriter("src/outputfile.txt", "UTF-8");
                     listManager.getFoodItemsOutput();
                     System.out.print("LOADED DATA:\n" + listManager.getFoodItemsOutput() + "\n");
 //                    for (String line : line){

@@ -1,10 +1,10 @@
-package model;
+package src.model;
 
 import java.util.ArrayList;
 import java.util.List;
 
 // Represents users daily food intake
-public class ListManager implements Loadable, Saveable {
+public class ListManager implements InterfaceLoadable, InterfaceSaveable {
     List<FoodItem> foodItemList;
 
     // EFFECTS: constructs a new selection system object

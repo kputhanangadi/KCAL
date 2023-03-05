@@ -1,4 +1,4 @@
-//package ui;
+//package src.model.ui;
 //
 //import java.io.IOException;
 //import java.io.PrintWriter;

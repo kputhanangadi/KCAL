@@ -72,7 +72,17 @@ public class InterfaceSelectionSystem {
                     }
                 case 3:
                     if (listManager.foodCount() > 0) {
-                        listManager.showFoodItems();
+                            if (listManager.foodItemList.size() == 0) {
+                                System.out.println("Eat some food to log!" + "\n");
+                            } else {
+                                System.out.println("Food Consumed: ");
+                                int index = 1;
+                                for (FoodItem item : listManager.foodItemList) {
+                                    System.out.println("[" + index++ + "] - " + item.getName());
+                                }
+                                System.out.println("\n");
+                            }
+//                        listManager.showFoodItems();
 
                         System.out.print("Which food item would you like to delete:  ");
                         int index = scanner.nextInt();
@@ -83,7 +93,17 @@ public class InterfaceSelectionSystem {
                     }
                     break;
                 case 4:
-                    listManager.showFoodItems();
+                    if (listManager.foodItemList.size() == 0) {
+                        System.out.println("Eat some food to log!" + "\n");
+                    } else {
+                        System.out.println("Food Consumed: ");
+                        int index = 1;
+                        for (FoodItem item : listManager.foodItemList) {
+                            System.out.println("[" + index++ + "] - " + item.getName());
+                        }
+                        System.out.println("\n");
+                    }
+//                    listManager.showFoodItems();
                     break;
                 case 5:
                     System.out.println("Total calories consumed: " + listManager.getTotalCaloriesConsumed() + "\n");

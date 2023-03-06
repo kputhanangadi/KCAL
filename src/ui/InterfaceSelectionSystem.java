@@ -1,8 +1,6 @@
 package src.ui;
 
-import src.model.RegularFood;
-import src.model.JunkFood;
-import src.model.ListManager;
+import src.model.*;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -48,8 +46,13 @@ public class InterfaceSelectionSystem {
                     int regularFoodCalories = scanner.nextInt();
                     scanner.nextLine();
                     RegularFood regularFood = new RegularFood(regularFoodItem, regularFoodCalories);
-                    listManager.addNewFood(String.valueOf(regularFood));
-                    break;
+                    try {
+                        listManager.addNewFood(regularFood);
+                    } catch (TooManyCaloriesException e) {
+                        System.out.println("Exceeded daily calorie intake.");
+                    } finally {
+                        break;
+                    }
                 case 2:
                     System.out.print("Enter a junk food item that you have consumed: ");
                     String junkFoodItem = scanner.nextLine();
@@ -60,8 +63,13 @@ public class InterfaceSelectionSystem {
                     int junkFoodSugar = scanner.nextInt();
                     scanner.nextLine();
                     JunkFood junkFood = new JunkFood(junkFoodItem, junkFoodCalories, junkFoodSugar);
-                    listManager.addNewFood(String.valueOf(junkFood));
-                    break;
+                    try {
+                        listManager.addNewFood(junkFood);
+                    } catch (TooManyCaloriesException e) {
+                        System.out.println("Exceeded daily calorie intake.");
+                    } finally {
+                        break;
+                    }
                 case 3:
                     if (listManager.foodCount() > 0) {
                         listManager.showFoodItems();

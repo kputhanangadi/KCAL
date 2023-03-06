@@ -1,22 +1,20 @@
 package src.model;
 
 public class JunkFood extends FoodItem {
-    private String type;
-    private int calorieCount;
+    private int type;
 
     public JunkFood(String name, int type, int calorieCount) {
-        super(name, 105);
-        this.type = String.valueOf(type);
-        this.calorieCount = calorieCount;
+        super(name, calorieCount);
+        this.type = type;
     }
 
-    public String getType() {
+    public int getType() {
         return type;
     }
 
     @Override
     public int getCalorieCount() {
-        return calorieCount;
+        return super.getCalorieCount();
     }
 
     @Override
@@ -24,7 +22,7 @@ public class JunkFood extends FoodItem {
         return "JUNK_FOOD --> [" +
                 "name = " + getName() +
                 " | calorieCount = " + type +
-                " | sugarCount = " + calorieCount +
+                " | sugarCount = " + super.getCalorieCount() +
                 ']';
     }
 }

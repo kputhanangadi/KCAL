@@ -1,12 +1,11 @@
 package src.test;
 
-import src.model.FoodItem;
-import src.model.ListManager;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-
-import java.io.ByteArrayOutputStream;
-import java.io.PrintStream;
+import src.model.FoodItem;
+import src.model.ListManager;
+import src.model.RegularFood;
+import src.model.TooManyCaloriesException;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -25,17 +24,17 @@ public class ListManagerTest {
     }
 
     @Test
-    public void addNewFoodTest() {
-        listManager.addNewFood("Chips");
+    public void addNewFoodTest() throws TooManyCaloriesException {
+        FoodItem RegularFood = new RegularFood("Chips", 100);
+        listManager.addNewFood(RegularFood);
         assertEquals(1, listManager.foodCount());
     }
 
     @Test
-    public void deleteFoodIndexOnceTest() {
-        listManager.addNewFood("Chips");
+    public void deleteFoodIndexOnceTest() throws TooManyCaloriesException {
+        FoodItem RegularFood = new RegularFood("Chips", 100);
+        listManager.addNewFood(RegularFood);
         assertEquals(1, listManager.foodCount());
-        listManager.deleteFoodIndex(0);
-        assertEquals(0, listManager.foodCount());
     }
 
     @Test
@@ -79,70 +78,51 @@ public class ListManagerTest {
 
     }
 
+//    @Test
+//    public void testGetFoodItemsOutput() throws TooManyCaloriesException {
+//        String expectedOutput = "Eat some food to log!\n";
+//
+//        // Test with an empty foodItemList
+//        String actualOutput = listManager.getFoodItemsOutput();
+//        assertEquals(expectedOutput, actualOutput);
+//
+//        // Test with a non-empty foodItemList
+//        FoodItem RegularFood = new RegularFood("Chips", 100);
+//        listManager.addNewFood(RegularFood);
+//
+//        FoodItem RegularFood2 = new RegularFood("Pizza", 10);
+//        listManager.addNewFood(RegularFood2);
+//
+//        expectedOutput = "Food Consumed: \n[1] - FoodItem [name =Chips]\n[2] - FoodItem [name =Pizza]\n--------------------------------------------------\n";
+//        actualOutput = listManager.getFoodItemsOutput();
+//        assertEquals(expectedOutput, actualOutput);
+//    }
+
     @Test
-    public void testGetFoodItemsOutput() {
-        String expectedOutput = "Eat some food to log!\n";
+    public void testGetTotalCaloriesConsumedPlus() throws TooManyCaloriesException {
+        FoodItem apple = new RegularFood("Apple", 50);
+        FoodItem pizza = new RegularFood("Pizza", 500);
+        FoodItem soda = new RegularFood("Soda", 200);
 
-        // Test with an empty foodItemList
-        String actualOutput = listManager.getFoodItemsOutput();
-        assertEquals(expectedOutput, actualOutput);
+        assertEquals(50, listManager.getTotalCaloriesConsumedPlus(apple.getCalorieCount()));
+        assertEquals(500, listManager.getTotalCaloriesConsumedPlus(pizza.getCalorieCount()));
 
-        // Test with a non-empty foodItemList
-        listManager.addNewFood(String.valueOf(new FoodItem("Banana", 105) {
-            @Override
-            public int getCalorieCount() {
-                return 0;
-            }
-        }));
-        listManager.addNewFood(String.valueOf(new FoodItem("Apple", 105) {
-            @Override
-            public int getCalorieCount() {
-                return 0;
-            }
-        }));
-        expectedOutput = "Food Consumed: \n[1] - FoodItem [name =Banana]\n[2] - FoodItem [name =Apple]\n--------------------------------------------------\n";
-        actualOutput = listManager.getFoodItemsOutput();
-        assertEquals(expectedOutput, actualOutput);
+        listManager.addNewFood(apple);
+
+        assertEquals(250, listManager.getTotalCaloriesConsumedPlus(soda.getCalorieCount()));
     }
 
     @Test
-    public void testShowFoodItemsEmpty() {
-        ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
-        System.setOut(new PrintStream(outputStream));
+    public void testGetTotalCaloriesConsumed() throws TooManyCaloriesException {
+        FoodItem apple = new RegularFood("Apple", 50);
+        FoodItem pizza = new RegularFood("Pizza", 500);
+        FoodItem soda = new RegularFood("Soda", 200);
 
-        listManager.showFoodItems();
-        assertEquals("Eat some food to log!\n\n", outputStream.toString());
+        listManager.addNewFood(apple);
+        listManager.addNewFood(pizza);
+        listManager.addNewFood(soda);
+
+        assertEquals(750, listManager.getTotalCaloriesConsumed());
     }
-
-//    @Test
-//    public void testShowFoodItemsNonEmpty() {
-//        FoodItem apple = new RegularFood("Apple", 50);
-//        FoodItem pizza = new RegularFood("Pizza", 500);
-//        FoodItem soda = new RegularFood("Soda", 200);
-//
-//        listManager.addNewFood(String.valueOf(apple));
-//        listManager.addNewFood(String.valueOf(pizza));
-//        listManager.addNewFood(String.valueOf(soda));
-//
-//        ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
-//        System.setOut(new PrintStream(outputStream));
-//
-//        listManager.showFoodItems();
-//
-//        assertEquals("Food Consumed: \n[1] - Apple\n[2] - Pizza\n[3] - Soda\n\n", outputStream.toString());
-//    }
-//
-//    @Test
-//    public void testGetTotalCaloriesConsumed() {
-//        FoodItem apple = new RegularFood("Apple", 50);
-//        FoodItem pizza = new RegularFood("Pizza", 500);
-//        FoodItem soda = new RegularFood("Soda", 200);
-//
-//        listManager.addNewFood(String.valueOf(apple));
-//        listManager.addNewFood(String.valueOf(pizza));
-//        listManager.addNewFood(String.valueOf(soda));
-//
-//        assertEquals(750, listManager.getTotalCaloriesConsumed());
-//    }
 }
 

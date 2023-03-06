@@ -13,14 +13,12 @@ public class ListManager implements InterfaceLoadable, InterfaceSaveable {
     }
 
     // MODIFIES: this
-    // EFFECTS: adds a new tem into the food list
-    public void addNewFood(String foodName) {
-        foodItemList.add(new FoodItem(foodName, 105) {
-            @Override
-            public int getCalorieCount() {
-                return 0;
-            }
-        });
+    // EFFECTS: adds a new item into the food list
+    public void addNewFood(FoodItem item) throws TooManyCaloriesException {
+        if (this.getTotalCaloriesConsumedPlus(item.getCalorieCount()) > 2500) {
+            throw new TooManyCaloriesException();
+        }
+        foodItemList.add(item);
         System.out.println("Successfully added item into Foods Consumed Today!");
     }
 

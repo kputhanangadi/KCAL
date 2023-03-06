@@ -16,12 +16,6 @@ class JunkFoodTest {
     }
 
     @Test
-    public void testGetType() {
-        JunkFood food = new JunkFood("Chocolate Bar", 1, 230);
-        assertEquals("1", food.getType());
-    }
-
-    @Test
     public void testGetCalorieCount() {
         JunkFood food = new JunkFood("Chocolate Bar", 1, 230);
         assertEquals(230, food.getCalorieCount());

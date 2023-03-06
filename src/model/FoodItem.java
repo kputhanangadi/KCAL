@@ -11,7 +11,9 @@ public abstract class FoodItem {
         return name;
     }
 
-    public abstract int getCalorieCount();
+    public int getCalorieCount() {
+        return this.calCount;
+    }
 
     @Override
     public String toString() {

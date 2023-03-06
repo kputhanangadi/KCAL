@@ -29,7 +29,7 @@ public class InterfaceSelectionSystem {
 
         // REQUIRES: given int/string must be a valid index
         // MODIFIES: this
-        // EFFECTS:  respective code is executed from the 4 options
+        // EFFECTS:  respective code is executed from the 6 options
         while (true) {
             System.out.println("[1] Add a Regular Food item to the Food Consumed List.");
             System.out.println("[2] Add a Junk Food item to the Food Consumed List.");

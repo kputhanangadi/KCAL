@@ -11,7 +11,7 @@ class JunkFoodTest {
     public void testJunkFoodConstructor() {
         JunkFood food = new JunkFood("Chocolate Bar", 1, 230);
         assertEquals("Chocolate Bar", food.getName());
-        assertEquals("1", food.getType());
+        assertEquals(1, food.getType());
         assertEquals(230, food.getCalorieCount());
     }
 

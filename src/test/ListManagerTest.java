@@ -51,17 +51,18 @@ public class ListManagerTest {
 //        assertEquals(1, listManager.foodCount());
 //    }
 
-    @Test
-    public void showFoodItemsEmptyTest() {
-        listManager.showFoodItems();
-        assertEquals(0, listManager.foodCount());
-    }
-
 //    @Test
-//    public void foodCountNotEmptyTest() {
-//        listManager.addNewFood("Chips");
-//        assertEquals(1, listManager.foodCount());
+//    public void showFoodItemsEmptyTest() {
+//        listManager.showFoodItems();
+//        assertEquals(0, listManager.foodCount());
 //    }
+
+    @Test
+    public void foodCountNotEmptyTest() throws TooManyCaloriesException {
+        FoodItem RegularFood = new RegularFood("Chips", 100);
+        listManager.addNewFood(RegularFood);
+        assertEquals(1, listManager.foodCount());
+    }
 
     @Test
     public void foodCountEmptyTest() {

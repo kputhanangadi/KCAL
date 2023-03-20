@@ -26,4 +26,18 @@ public class RegularFood extends FoodItem {
                 " | calorieCount = " + super.getCalorieCount() +
                 ']';
     }
+
+//    @Override
+//    public boolean equals(Object o) {
+//        if (this == o) return true;
+//        if (o == null || getClass() != o.getClass()) return false;
+//        FoodItem foodItem = (FoodItem) o;
+//        return calCount == foodItem.calCount &&
+//                Objects.equals(name, foodItem.name);
+//    }
+//
+//    @Override
+//    public int hashCode() {
+//        return Objects.hash(name, calCount);
+//    }
 }

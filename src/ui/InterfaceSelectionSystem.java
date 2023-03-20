@@ -49,7 +49,7 @@ public class InterfaceSelectionSystem {
                     try {
                         listManager.addNewFood(regularFood);
                     } catch (TooManyCaloriesException e) {
-                        System.out.println("Exceeded daily calorie intake.");
+                        System.out.println("Exceeded daily calorie intake.\n");
                     } finally {
                         break;
                     }
@@ -108,6 +108,9 @@ public class InterfaceSelectionSystem {
                 case 5:
                     System.out.println("Total calories consumed: " + listManager.getTotalCaloriesConsumed() + "\n");
                     break;
+//                case 6:
+//                    System.out.println("Keep up the good work!" + "\n");
+//                    break;
                 case 6:
                     PrintWriter writer = new PrintWriter("src/outputfile.txt", "UTF-8");
                     listManager.getFoodItemsOutput();

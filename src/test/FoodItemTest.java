@@ -3,6 +3,7 @@ package src.test;
 import src.model.FoodItem;
 import src.model.JunkFood;
 import org.junit.jupiter.api.Test;
+import src.model.RegularFood;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -10,7 +11,7 @@ class FoodItemTest {
 
     @Test
     public void testGetName() {
-        FoodItem item = new FoodItem("Banana", 105) {
+        FoodItem item = new RegularFood("Banana", 105) {
             @Override
             public int getCalorieCount() {
                 return 0;

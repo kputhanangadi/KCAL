@@ -34,20 +34,6 @@ public class ListManager implements InterfaceLoadable, InterfaceSaveable {
         }
     }
 
-//    // EFFECTS: displays all food items stored in the food list
-//    public void showFoodItems() {
-//        if (foodItemList.size() == 0) {
-//            System.out.println("Eat some food to log!" + "\n");
-//        } else {
-//            System.out.println("Food Consumed: ");
-//            int index = 1;
-//            for (FoodItem item : foodItemList) {
-//                System.out.println("[" + index++ + "] - " + item.getName());
-//            }
-//            System.out.println("\n");
-//        }
-//    }
-
     // EFFECTS: returns the number of food items in the food list
     public int foodCount() {
 

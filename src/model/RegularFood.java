@@ -4,12 +4,31 @@ public class RegularFood extends FoodItem {
 
     public RegularFood(String name, int calorieCount) {
         super(name, calorieCount);
+        super.listManager = null;
     }
 
     // default calCount = 105
     public RegularFood(String foodName) {
         super(foodName, 105);
     }
+
+//    public void addManager(ListManager listManager) throws TooManyCaloriesException {
+//        if (this.listManager != listManager) {
+//            if (this.listManager != null) {
+//                this.removeManager();
+//            }
+//            this.listManager = listManager;
+//            this.listManager.addNewFood(this);
+//        }
+//    }
+//
+//    public void removeManager() {
+//        if (listManager != null) {
+//            ListManager temp = listManager;
+//            this.listManager = null;
+//            temp.deleteFoodIndex(listManager.foodItemList.indexOf(this));
+//        }
+//    }
 
     public int getCalorieCount() {
         return super.getCalorieCount();

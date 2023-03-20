@@ -1,12 +1,16 @@
 package src.model;
 
+import java.util.Objects;
+
 public abstract class FoodItem {
-    private String name;
+    protected ListManager listManager;
+    protected String name;
     protected int calCount;
 
     public FoodItem(String name, int i) {
         this.name = name;
         this.calCount = i;
+        listManager = null;
     }
 
     public String getName() {
@@ -15,6 +19,24 @@ public abstract class FoodItem {
 
     public int getCalorieCount() {
         return this.calCount;
+    }
+
+    public void addManager(ListManager listManager) throws TooManyCaloriesException {
+        if (this.listManager != listManager) {
+            if (this.listManager != null) {
+                this.removeManager();
+            }
+            this.listManager = listManager;
+            this.listManager.addNewFood(this);
+        }
+    }
+
+    public void removeManager() {
+        if (listManager != null) {
+            ListManager temp = listManager;
+            this.listManager = null;
+            temp.deleteFoodIndex(listManager.foodItemList.indexOf(this));
+        }
     }
 
     @Override

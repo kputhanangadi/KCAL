@@ -15,11 +15,16 @@ public class ListManager implements InterfaceLoadable, InterfaceSaveable {
     // MODIFIES: this
     // EFFECTS: adds a new item into the food list
     public void addNewFood(FoodItem item) throws TooManyCaloriesException {
-        if (this.getTotalCaloriesConsumedPlus(item.getCalorieCount()) > 2500) {
-            throw new TooManyCaloriesException();
+        if (!this.foodItemList.contains(item)) {
+            if (this.getTotalCaloriesConsumedPlus(item.getCalorieCount()) > 2500) {
+                throw new TooManyCaloriesException();
+            }
+            if (this.foodItemList != null) {
+                foodItemList.add(item);
+                item.addManager(this);
+                System.out.println("Successfully added item into Foods Consumed Today!");
+            }
         }
-        foodItemList.add(item);
-        System.out.println("Successfully added item into Foods Consumed Today!");
     }
 
     // REQUIRES: given int must be a valid index

@@ -23,7 +23,7 @@ class FoodItemTest {
 
     @Test
     public void testGetCalorieCount() {
-        FoodItem item = new FoodItem("Banana", 105) {
+        FoodItem item = new RegularFood("Banana", 105) {
             @Override
             public int getCalorieCount() {
                 return 0;

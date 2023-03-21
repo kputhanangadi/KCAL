@@ -21,6 +21,8 @@ public abstract class FoodItem {
         return this.calCount;
     }
 
+    // MODIFIES: this
+    // EFFECTS: adds a new item into the foodIemList
     public void addManager(ListManager listManager) throws TooManyCaloriesException {
         if (this.listManager != listManager) {
             if (this.listManager != null) {
@@ -31,6 +33,9 @@ public abstract class FoodItem {
         }
     }
 
+    // REQUIRES: a food item to be in the foodIemList
+    // MODIFIES: this
+    // EFFECTS:  removes an item from the food list
     public void removeManager() {
         if (listManager != null) {
             ListManager temp = listManager;
@@ -59,20 +64,6 @@ public abstract class FoodItem {
     public int hashCode() {
         return Objects.hash(name, calCount);
     }
-
-//    @Override
-//    public boolean equals(Object o) {
-//        if (this == o) return true;
-//        if (o == null || getClass() != o.getClass()) return false;
-//        FoodItem foodItem = (FoodItem) o;
-//        return calCount == foodItem.calCount &&
-//                Objects.equals(name, foodItem.name);
-//    }
-//
-//    @Override
-//    public int hashCode() {
-//        return Objects.hash(name, calCount);
-//    }
 }
 
 

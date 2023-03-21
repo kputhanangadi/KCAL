@@ -13,7 +13,7 @@ public class ListManager implements InterfaceLoadable, InterfaceSaveable {
     }
 
     // MODIFIES: this
-    // EFFECTS: adds a new item into the food list
+    // EFFECTS: adds a new item into the foodIemList
     public void addNewFood(FoodItem item) throws TooManyCaloriesException {
         if (!this.foodItemList.contains(item)) {
             if (this.getTotalCaloriesConsumedPlus(item.getCalorieCount()) > 2500) {
@@ -29,7 +29,7 @@ public class ListManager implements InterfaceLoadable, InterfaceSaveable {
 
     // REQUIRES: given int must be a valid index
     // MODIFIES: this
-    // EFFECTS:  removes an item from the food list
+    // EFFECTS:  removes an item from the foodIemList
     public void deleteFoodIndex(int index) {
         if (index >= 0 && index < foodItemList.size()) {
             foodItemList.remove(index);
@@ -39,20 +39,24 @@ public class ListManager implements InterfaceLoadable, InterfaceSaveable {
         }
     }
 
-    // EFFECTS: returns the number of food items in the food list
+    // EFFECTS: returns the number of food items in the foodIemList
     public int foodCount() {
-
         return foodItemList.size();
     }
 
+    // REQUIRES: a saved file
+    // EFFECTS:  loads file
     public void load(){
 
     }
 
+    // REQUIRES: food to be stored to be foodIemList
+    // EFFECTS: saves file
     public void save() {
 
     }
 
+    // EFFECTS: creates a list of food that the user has consumed
     public String getFoodItemsOutput() {
         StringBuilder sb = new StringBuilder();
         if (foodItemList.size() == 0) {
@@ -68,15 +72,9 @@ public class ListManager implements InterfaceLoadable, InterfaceSaveable {
         return sb.toString();
     }
 
-    public int getTotalCaloriesConsumedPlus(int newItemCals) {
-        int totalCalories = 0;
-        for (FoodItem food : foodItemList) {
-            totalCalories += food.getCalorieCount();
-        }
-        totalCalories += newItemCals;
-        return totalCalories;
-    }
-
+    // REQUIRES: food to be stored to be foodIemList
+    // MODIFIES: this
+    // EFFECTS:  gets the total number of calories consumed
     public int getTotalCaloriesConsumed() {
         int totalCalories = 0;
         for (FoodItem food : foodItemList) {
@@ -85,4 +83,15 @@ public class ListManager implements InterfaceLoadable, InterfaceSaveable {
         return totalCalories;
     }
 
+    // REQUIRES: food to be stored to be foodIemList
+    // MODIFIES: this
+    // EFFECTS:  gets the total number of calories consumed including the food item that is being added to the foodIemList
+    public int getTotalCaloriesConsumedPlus(int newItemCals) {
+        int totalCalories = 0;
+        for (FoodItem food : foodItemList) {
+            totalCalories += food.getCalorieCount();
+        }
+        totalCalories += newItemCals;
+        return totalCalories;
+    }
 }

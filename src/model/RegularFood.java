@@ -27,11 +27,12 @@ public class RegularFood extends FoodItem {
         super.calCount = calorieCount;
     }
 
-    @Override
-    public String toString() {
-        return "REGULAR_FOOD --> [" +
-                "name = " + getName() +
-                " | calorieCount = " + super.getCalorieCount() +
-                ']';
-    }
+//    @Override
+//    public String toString() {
+//        return "REGULAR_FOOD --> [" +
+//                "name = " + getName() +
+//                " | calorieCount = " + super.getCalorieCount() +
+//                ']';
+//    }
+
 }

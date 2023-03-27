@@ -1,13 +1,22 @@
 package src.test;
 
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 import src.model.FoodItem;
 import src.model.JunkFood;
-import org.junit.jupiter.api.Test;
+import src.model.ListManager;
 import src.model.RegularFood;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class FoodItemTest {
+
+    private ListManager listManager;
+
+    @BeforeEach
+    public void runBefore() {
+        listManager = new ListManager();
+    }
 
     @Test
     public void testGetName() {
@@ -44,4 +53,5 @@ class FoodItemTest {
         String actualString = junkFood.toString();
         assertEquals(expectedString, actualString);
     }
+
 }

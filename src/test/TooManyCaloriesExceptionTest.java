@@ -1,28 +1,28 @@
 package src.test;
 
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import src.model.FoodItem;
 import src.model.ListManager;
 import src.model.RegularFood;
 import src.model.TooManyCaloriesException;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.fail;
+import static org.junit.Assert.*;
 
 public class TooManyCaloriesExceptionTest {
 
     private ListManager listManager = new ListManager();
 
-//    @BeforeEach
-//    public void runBefore() {
-//        listManager = new ListManager();
-//    }
+    @BeforeEach
+    public void runBefore() {
+        listManager = new ListManager();
+    }
 
-//    @Test
-//    public void testConstructor() {
-//        TooManyCaloriesException e = new TooManyCaloriesException();
-//        assertNotNull(e);
-//    }
+    @Test
+    public void testConstructor() {
+        TooManyCaloriesException e = new TooManyCaloriesException();
+        assertNotNull(e);
+    }
 
     @Test
     public void addNewFoodTooManyCalsTest() throws TooManyCaloriesException {

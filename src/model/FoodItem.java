@@ -3,20 +3,27 @@ package src.model;
 import java.util.Objects;
 
 public abstract class FoodItem {
+
     protected ListManager listManager;
     protected String name;
     protected int calCount;
 
+    // REQUIRES: a name and calorie(s)
+    // EFFECTS:  constructs a food item object
     public FoodItem(String name, int i) {
         this.name = name;
         this.calCount = i;
         listManager = null;
     }
 
+    // REQUIRES: a food item to be in the foodIemList
+    // EFFECTS:  returns the name of the food item
     public String getName() {
         return name;
     }
 
+    // REQUIRES: a food item to be in the foodIemList
+    // EFFECTS:  gets the calorie count of all items in the foodIemList
     public int getCalorieCount() {
         return this.calCount;
     }

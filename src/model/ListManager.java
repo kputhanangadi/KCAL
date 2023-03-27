@@ -3,8 +3,9 @@ package src.model;
 import java.util.ArrayList;
 import java.util.List;
 
-// Represents users daily food intake
+
 public class ListManager implements InterfaceLoadable, InterfaceSaveable {
+
     public List<FoodItem> foodItemList;
 
     // EFFECTS: constructs a new selection system object
@@ -94,4 +95,5 @@ public class ListManager implements InterfaceLoadable, InterfaceSaveable {
         totalCalories += newItemCals;
         return totalCalories;
     }
+
 }

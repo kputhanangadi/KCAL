@@ -1,6 +1,7 @@
 package src.model;
 
 public class JunkFood extends FoodItem {
+
     private int type;
 
     // REQUIRES: a name, type, and calorieCount
@@ -30,5 +31,6 @@ public class JunkFood extends FoodItem {
                 " | sugarCount = " + super.getCalorieCount() +
                 ']';
     }
+
 }
 

@@ -22,13 +22,13 @@ This is a Java-based calorie counter application that allows users to keep track
 ### Installation
 
 1. Clone the repository to your local machine
-git clone https://github.com/kputhanangadi/CalPal.git
+git clone `https://github.com/kputhanangadi/calpal.git`
 2. Navigate to the root directory of the project
-cd calorie-counter
+`cd calorie-counter`
 3. Build the project using Maven
-mvn clean package
+`mvn clean package`
 4. Run the application
-java -jar target/calorie-counter-1.0-SNAPSHOT.jar
+`java -jar target/calorie-counter-1.0-SNAPSHOT.jar`
 
 
 ## Usage

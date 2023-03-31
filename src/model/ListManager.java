@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public class ListManager implements InterfaceLoadable, InterfaceSaveable {
+public class ListManager {
 
     public List<FoodItem> foodItemList;
 
@@ -45,17 +45,17 @@ public class ListManager implements InterfaceLoadable, InterfaceSaveable {
         return foodItemList.size();
     }
 
-    // REQUIRES: a saved file
-    // EFFECTS:  loads file
-    public void load(){
-
-    }
-
-    // REQUIRES: food to be stored to be foodIemList
-    // EFFECTS: saves file
-    public void save() {
-
-    }
+//    // REQUIRES: a saved file
+//    // EFFECTS:  loads file
+//    public void load(){
+//
+//    }
+//
+//    // REQUIRES: food to be stored to be foodIemList
+//    // EFFECTS: saves file
+//    public void save() {
+//
+//    }
 
     // EFFECTS: creates a list of food that the user has consumed
     public String getFoodItemsOutput() {
@@ -88,6 +88,7 @@ public class ListManager implements InterfaceLoadable, InterfaceSaveable {
     // MODIFIES: this
     // EFFECTS:  gets the total number of calories consumed including the food item that is being added to the foodIemList
     public int getTotalCaloriesConsumedPlus(int newItemCals) {
+        //       return getTotalCaloriesConsumed() + newItemCals;
         int totalCalories = 0;
         for (FoodItem food : foodItemList) {
             totalCalories += food.getCalorieCount();
@@ -95,5 +96,4 @@ public class ListManager implements InterfaceLoadable, InterfaceSaveable {
         totalCalories += newItemCals;
         return totalCalories;
     }
-
 }

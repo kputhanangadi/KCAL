@@ -33,13 +33,14 @@ public abstract class FoodItem {
     public void addManager(ListManager listManager) throws TooManyCaloriesException {
         if (this.listManager != listManager) {
             if (this.listManager != null) {
-                this.removeManager();
+                this.removeManager(); //TODO
             }
             this.listManager = listManager;
             this.listManager.addNewFood(this);
         }
     }
 
+    // TODO
     // REQUIRES: a food item to be in the foodIemList
     // MODIFIES: this
     // EFFECTS:  removes an item from the food list

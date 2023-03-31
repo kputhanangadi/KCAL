@@ -2,10 +2,7 @@ package src.test;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import src.model.FoodItem;
-import src.model.JunkFood;
-import src.model.ListManager;
-import src.model.RegularFood;
+import src.model.*;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -53,5 +50,14 @@ class FoodItemTest {
         String actualString = junkFood.toString();
         assertEquals(expectedString, actualString);
     }
+
+//    @Test
+//    public void testRemoveManager() throws TooManyCaloriesException {
+//        FoodItem item = new RegularFood("Banana", 105);
+//        listManager.addNewFood(item);
+////        assertEquals(1, listManager.foodCount());
+//        item.removeManager();
+////        assertEquals(0, listManager.foodCount());
+//    }
 
 }

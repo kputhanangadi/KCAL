@@ -3,7 +3,6 @@ package src.ui;
 import src.model.*;
 
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Scanner;
@@ -111,16 +110,16 @@ public class InterfaceSelectionSystem {
 //                case 6:
 //                    System.out.println("Keep up the good work!" + "\n");
 //                    break;
-                case 6:
-                    PrintWriter writer = new PrintWriter("src/outputfile.txt", "UTF-8");
-                    listManager.getFoodItemsOutput();
-                    System.out.print("LOADED DATA:\n" + listManager.getFoodItemsOutput() + "\n");
-//                    for (String line : line){
-//                        System.out.print("LOADED DATA:\n" + "New Food\n" + "---------------------------\n");
-//                        writer.println(line);
-//                    }
-                    writer.close(); // note -- if you miss this, the file will not be written at all.
-                    break;
+//                case 6:
+//                    PrintWriter writer = new PrintWriter("src/outputfile.txt", "UTF-8");
+//                    listManager.getFoodItemsOutput();
+//                    System.out.print("LOADED DATA:\n" + listManager.getFoodItemsOutput() + "\n");
+////                    for (String line : line){
+////                        System.out.print("LOADED DATA:\n" + "New Food\n" + "---------------------------\n");
+////                        writer.println(line);
+////                    }
+//                    writer.close(); // note -- if you miss this, the file will not be written at all.
+//                    break;
                 default:
                     System.out.println("Invalid selection.");
             }

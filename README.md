@@ -1,1 +1,1 @@
-# Calorie-Counter-Project
+# CalPal

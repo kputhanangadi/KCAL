@@ -81,7 +81,6 @@ public class InterfaceSelectionSystem {
                                 }
                                 System.out.println("\n");
                             }
-//                        listManager.showFoodItems();
 
                         System.out.print("Which food item would you like to delete:  ");
                         int index = scanner.nextInt();
@@ -102,7 +101,6 @@ public class InterfaceSelectionSystem {
                         }
                         System.out.println("\n");
                     }
-//                    listManager.showFoodItems();
                     break;
                 case 5:
                     System.out.println("Total calories consumed: " + listManager.getTotalCaloriesConsumed() + "\n");

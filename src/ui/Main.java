@@ -1,6 +1,8 @@
 import src.network.WebDataReader;
 import src.ui.InterfaceSelectionSystem;
+import src.ui.InterfaceSelectionSystemGUI;
 
+import javax.swing.*;
 import java.io.IOException;
 import java.util.Observable;
 import java.util.Observer;
@@ -32,7 +34,13 @@ public class Main {
         }
 
         // THE ACTUAL CALORIE COUNTER
-        new InterfaceSelectionSystem();
+//        new InterfaceSelectionSystem();
+
+        // GUI
+        InterfaceSelectionSystemGUI gui = new InterfaceSelectionSystemGUI();
+        gui.pack();
+        gui.setVisible(true);
+
     }
 
     // NEW OBSERVER CLASS
@@ -42,5 +50,6 @@ public class Main {
             System.out.println("TRIGGER: Webreader has read the data successfully.");
         }
     }
+
 }
 

@@ -38,7 +38,7 @@ public class Main {
 
         // GUI
         InterfaceSelectionSystemGUI gui = new InterfaceSelectionSystemGUI();
-        gui.pack();
+//        gui.pack();
         gui.setVisible(true);
 
     }

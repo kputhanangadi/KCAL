@@ -264,7 +264,6 @@ public class InterfaceSelectionSystem extends JFrame implements ActionListener {
                         throw new RuntimeException(ex);
                     }
                     clip.start();
-
                     System.exit(0);
                 }
                 break;

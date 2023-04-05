@@ -33,14 +33,13 @@ public abstract class FoodItem {
     public void addManager(ListManager listManager) throws TooManyCaloriesException {
         if (this.listManager != listManager) {
             if (this.listManager != null) {
-                this.removeManager(); //TODO
+                this.removeManager();
             }
             this.listManager = listManager;
             this.listManager.addNewFood(this);
         }
     }
 
-    // TODO
     // REQUIRES: a food item to be in the foodIemList
     // MODIFIES: this
     // EFFECTS:  removes an item from the food list
@@ -52,6 +51,7 @@ public abstract class FoodItem {
         }
     }
 
+    // EFFECTS:  names the food item within the foodList
     @Override
     public String toString() {
         return "FoodItem [" +
@@ -59,6 +59,7 @@ public abstract class FoodItem {
                 ']';
     }
 
+    // EFFECTS:  changes the equals value to matching names
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -68,6 +69,7 @@ public abstract class FoodItem {
                 Objects.equals(name, foodItem.name);
     }
 
+    // EFFECTS:  changes the hashcode value to matching name and calorie count
     @Override
     public int hashCode() {
         return Objects.hash(name, calCount);

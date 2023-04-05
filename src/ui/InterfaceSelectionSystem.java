@@ -119,6 +119,9 @@ public class InterfaceSelectionSystem extends JFrame implements ActionListener {
         setVisible(true);
     }
 
+    // REQUIRES: user interaction with the GUI
+    // MODIFIES: this
+    // EFFECTS:  preforms respective functionality of the program
     @Override
     public void actionPerformed(ActionEvent e) {
         switch (e.getActionCommand()) {

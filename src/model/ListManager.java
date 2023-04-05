@@ -14,7 +14,7 @@ public class ListManager {
     }
 
     // MODIFIES: this
-    // EFFECTS: adds a new item into the foodIemList
+    // EFFECTS:  adds a new item into the foodIemList
     public void addNewFood(FoodItem item) throws TooManyCaloriesException {
         if (!this.foodItemList.contains(item)) {
             if (this.getTotalCaloriesConsumedPlus(item.getCalorieCount()) > 2500) {
@@ -40,13 +40,13 @@ public class ListManager {
         }
     }
 
-    // EFFECTS: returns the number of food items in the foodIemList
+    // EFFECTS:  returns the number of food items in the foodIemList
     public int foodCount() {
         return foodItemList.size();
     }
 
 
-    // EFFECTS: creates a list of food that the user has consumed
+    // EFFECTS:  creates a list of food that the user has consumed
     public String getFoodItemsOutput() {
         StringBuilder sb = new StringBuilder();
         if (foodItemList.size() == 0) {

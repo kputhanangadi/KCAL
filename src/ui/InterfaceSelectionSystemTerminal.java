@@ -9,10 +9,14 @@ import java.util.Scanner;
 
 public class InterfaceSelectionSystemTerminal {
 
+    // REQUIRES: runSelectionSystem method
+    // EFFECTS:  constructs an InterfaceSelectionSystemTerminal
     public InterfaceSelectionSystemTerminal() throws IOException {
         runSelectionSystem();
     }
 
+    // REQUIRES: line is not null
+    // EFFECTS:  returns an ArrayList of strings obtained by splitting the given line on spaces
     public static ArrayList<String> splitOnSpace(String line) {
         String[] splits = line.split(" ");
         return new ArrayList<>(Arrays.asList(splits));

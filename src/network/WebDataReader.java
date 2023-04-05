@@ -13,7 +13,7 @@ public class WebDataReader extends Observable {
 
     //  REQUIRES: a valid URL string.
     //  MODIFIES: this.data, this.changed
-    //  EFFECTS: reads data from the given URL and sets it as the data for the WebDataReader instance.
+    //  EFFECTS:  reads data from the given URL and sets it as the data for the WebDataReader instance.
     public void readData(String url) throws MalformedURLException, IOException {
         BufferedReader br = null;
         try {
@@ -35,7 +35,7 @@ public class WebDataReader extends Observable {
         }
     }
 
-    // EFFECTS: returns the data string of the WebDataReader instance
+    // EFFECTS:  returns the data string of the WebDataReader instance
     public String getData() {
         return data;
     }

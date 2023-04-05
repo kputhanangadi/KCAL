@@ -16,20 +16,20 @@ public class Observable {
 
     // REQUIRES: an Observer object as parameter
     // MODIFIES: this
-    // EFFECTS: adds the Observer object to the observers list
+    // EFFECTS:  adds the Observer object to the observers list
     public void addObserver(Observer observer) {
         observers.add(observer);
     }
 
     // REQUIRES: an Observer object as parameter
     // MODIFIES: this
-    // EFFECTS: removes the Observer object from the observers list if it is in the list
+    // EFFECTS:  removes the Observer object from the observers list if it is in the list
     public void removeObserver(Observer observer) {
         observers.remove(observer);
     }
 
     // MODIFIES: this
-    // EFFECTS: calls the update method for each observer in the observers list
+    // EFFECTS:  calls the update method for each observer in the observers list
     public void notifyObservers() {
         if (changed) {
             for (Observer observer : observers) {

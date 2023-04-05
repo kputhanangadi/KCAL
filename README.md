@@ -47,8 +47,6 @@ Upon launching the application, you will be presented with a menu of options. He
 
 6. View Past Entries: Shows a list of all past food entries, with the ability to edit or delete them.
 
-7. Search Entries: Allows you to search for a specific food entry by name or date.
-
 ## Contributing
 
 If you'd like to contribute to the development of this application, please follow these steps:

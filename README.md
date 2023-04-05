@@ -1,4 +1,4 @@
-# CalPal
+# KCAL - A Desktop Based Calorie Counter Apllication
 
 This is a Java-based calorie counter application that allows users to keep track of the calories they consume on a daily basis. The application comes with a number of features that make it easy for users to keep track of their calorie intake and meet their dietary goals.
 

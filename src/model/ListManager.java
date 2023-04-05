@@ -45,17 +45,6 @@ public class ListManager {
         return foodItemList.size();
     }
 
-//    // REQUIRES: a saved file
-//    // EFFECTS:  loads file
-//    public void load(){
-//
-//    }
-//
-//    // REQUIRES: food to be stored to be foodIemList
-//    // EFFECTS: saves file
-//    public void save() {
-//
-//    }
 
     // EFFECTS: creates a list of food that the user has consumed
     public String getFoodItemsOutput() {
@@ -96,4 +85,5 @@ public class ListManager {
         totalCalories += newItemCals;
         return totalCalories;
     }
+
 }

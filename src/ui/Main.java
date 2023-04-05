@@ -1,7 +1,9 @@
 import src.network.WebDataReader;
+import src.ui.InterfaceSelectionSystemTerminal;
 import src.ui.InterfaceSelectionSystem;
-import src.ui.InterfaceSelectionSystemGUI;
 
+import javax.sound.sampled.LineUnavailableException;
+import javax.sound.sampled.UnsupportedAudioFileException;
 import javax.swing.*;
 import java.io.IOException;
 import java.util.Observable;
@@ -10,7 +12,7 @@ import java.util.Observer;
 public class Main {
 
     // RUNNING THE PROGRAM
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) throws IOException, UnsupportedAudioFileException, LineUnavailableException {
 
         // READING WEB DATA
         WebDataReader reader = new WebDataReader();
@@ -33,12 +35,11 @@ public class Main {
             System.out.println("Error reading data: " + e.getMessage());
         }
 
-        // THE ACTUAL CALORIE COUNTER
-//        new InterfaceSelectionSystem();
+        // THE ACTUAL CALORIE COUNTER [UNCOMMENT TO VIEW CONSOLE APPLICATION]
+//        new InterfaceSelectionSystemTerminal();
 
         // GUI
-        InterfaceSelectionSystemGUI gui = new InterfaceSelectionSystemGUI();
-//        gui.pack();
+        InterfaceSelectionSystem gui = new InterfaceSelectionSystem();
         gui.setVisible(true);
 
     }

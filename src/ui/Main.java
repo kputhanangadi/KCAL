@@ -42,12 +42,12 @@ public class Main {
 
         // THE ACTUAL CALORIE COUNTER [UNCOMMENT TO VIEW CONSOLE APPLICATION]
         // EFFECTS:  runs the calorie counter in the console
-//        new InterfaceSelectionSystemTerminal();
+        new InterfaceSelectionSystemTerminal();
 
         // GUI [UNCOMMENT TO VIEW GUI APPLICATION]
         // EFFECTS:  creates a GUI for the calorie counter and sets it visible
-        InterfaceSelectionSystem gui = new InterfaceSelectionSystem();
-        gui.setVisible(true);
+//        InterfaceSelectionSystem gui = new InterfaceSelectionSystem();
+//        gui.setVisible(true);
 
     }
 

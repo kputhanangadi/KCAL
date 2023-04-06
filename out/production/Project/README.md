@@ -1,4 +1,4 @@
-# CalPal
+# KCAL *[Desktop Based Calorie Counter Application]*
 
 This is a Java-based calorie counter application that allows users to keep track of the calories they consume on a daily basis. The application comes with a number of features that make it easy for users to keep track of their calorie intake and meet their dietary goals.
 
@@ -46,8 +46,6 @@ Upon launching the application, you will be presented with a menu of options. He
 5. View Monthly Summary: Shows a summary of the total calories consumed for the current month.
 
 6. View Past Entries: Shows a list of all past food entries, with the ability to edit or delete them.
-
-7. Search Entries: Allows you to search for a specific food entry by name or date.
 
 ## Contributing
 

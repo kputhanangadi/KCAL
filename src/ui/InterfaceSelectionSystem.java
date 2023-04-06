@@ -132,7 +132,6 @@ public class InterfaceSelectionSystem extends JFrame implements ActionListener {
                 try {
                     listManager.addNewFood(regularFood);
                     JOptionPane.showMessageDialog(this, "Added " + regularFoodItem + " to food consumed list.");
-                    clip.start();
                 } catch (TooManyCaloriesException exception) {
                     JOptionPane.showMessageDialog(this, "Exceeded daily calorie intake.", "Error", JOptionPane.ERROR_MESSAGE);
                 }

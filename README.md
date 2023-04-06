@@ -2,6 +2,9 @@
 
 This is a Java-based calorie counter application that allows users to keep track of the calories they consume on a daily basis. The application comes with a number of features that make it easy for users to keep track of their calorie intake and meet their dietary goals.
 
+## Click Below For Demo Video
+[![KCAL](https://i.imgur.com/JNaUtYZ.png)](https://youtu.be/QHoZaU_HnJE "KCAL Demo")
+
 ## Features
 
 - Add different types of food with the corresponding number of calories
